@@ -5,6 +5,12 @@ terraform {
       version = "2.40.0"
     }
   }
+  backend "azurerm" {
+      resource_group_name   = "cal-1244-0a"
+      storage_account_name  = "sasacal15143b88"
+      container_name        = "calab"
+      key                   = "dev.terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
@@ -12,7 +18,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "cal-943-c5"
+  name     = "cal-1244-0a"
   location = "West US"
 }
 
